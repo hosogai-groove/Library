@@ -1,0 +1,36 @@
+.center{
+	text-align: center;
+}
+
+.parent{
+	display: flex;
+	justify-content:  center;
+	position: relative;
+}
+
+.left{
+	position: absolute;
+	left: 0;
+}
+
+.clearbutton{
+	position: relative;
+	right: 25px;
+}
+
+.fontChg30{
+	font-size: 30px;
+}
+
+.fontChg25{
+	font-size: 25px;
+}
+
+.fontChg20{
+	font-size: 20px;
+}
+
+.redFontChg{
+	font-size: 25px;
+	color: red;
+}

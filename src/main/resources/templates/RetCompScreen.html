@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>返却</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+</head>
+
+<body>
+<p>
+<div>返却</div>
+</p>
+<div class = "fontChg30 center">
+<br>
+<br>
+	<div th:text = "${text}"></div>
+<br>
+</p>
+<input type = "hidden" id = "msg" th:value = "${text}">
+
+<form action = "LibrarySystem_LendReturn" id = "form" method = "post">
+<input type = "hidden" name = "cardNumber" th:value = "${cardNumber}">
+<input type = "hidden" name = "userName" th:value = "${userName}">
+<input type = "submit" id = "buttonName" value = "貸出・返却メニュー画面へ" class = "buttonSizeL">
+</form>
+<br>
+</div>
+</body>
+</html>

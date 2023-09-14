@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>延滞一覧メニュー画面</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+</head>
+
+<body>
+<p>延滞一覧</p>
+<div class = "center">
+<form action = "LibrarySystem_LendDelay" method = "post">
+<input type = "submit" value = "貸出延滞一覧" class = "buttonSizeL">
+</form>
+<br>
+<br>
+<input type = "button" value = "累計延滞一覧" class = "buttonSizeL">
+<br>
+<br>
+<form action = "LibrarySystem_MainMenu" method = "post">
+<input type = "submit" value = "戻る" class = "buttonSizeM">
+</form>
+</div>
+</body>
+
+</html>

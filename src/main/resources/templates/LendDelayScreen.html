@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>貸出延滞一覧</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+<script src = "https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src = "LendDelay/CreTableLeDelay.js"></script>
+<script src = "LendDelay/LendDelayConnect.js"></script>
+<script src = "LendDelay/OrderGet.js"></script>
+<script src = "LendDelay/TimeSet.js"></script>
+<script src = "LendDelay/InsDelayDays.js"></script>
+</head>
+<body>
+<p>貸出延滞一覧</p>
+<fieldset class = "radioField">
+
+<div>日数　　　　　　　
+<input type = "radio" id = "daysOrder1" name = "l.deadLineDate" value = "asc" checked onclick = "getToDay(days.value)">
+<label for = "daysOrder1">昇順</label>
+<input type = "radio" id = "daysOrder2" name = "l.deadLineDate" value = "desc" onclick = "getToDay(days.value)">
+<label for = "daysOrder2">降順</label>
+</div>
+
+<div>利用者名　　　　　
+<input type = "radio" id = "uNameOrder1" name = "u.userName" value = "asc" checked onclick = "getToDay(days.value)">
+<label for = "uNameOrder1">昇順</label>
+<input type = "radio" id = "uNameOrder2" name = "u.userName" value = "desc" onclick = "getToDay(days.value)">
+<label for = "uNameOrder2">降順</label>
+</div>
+
+<div>書籍名　　　　　　
+<input type = "radio" id = "bNameOrder1" name = "b.bookName" value = "asc" checked onclick = "getToDay(days.value)">
+<label for = "bNameOrder1">昇順</label>
+<input type = "radio" id = "bNameOrder2" name = "b.bookName" value = "desc" onclick = "getToDay(days.value)">
+<label for = "bNameOrder2">降順</label>
+</div>
+
+<div>第1優先　　
+<input type = "radio" id = "firstOrder1" name = "firstSort" value = "l.deadLineDate" checked  onclick = "getToDay(days.value)">
+<label for = "firstOrder1">日数</label>
+<input type = "radio" id = "firstOrder2" name = "firstSort" value = "u.userName" onclick = "getToDay(days.value)">
+<label for = "firstOrder2">利用者名</label>
+<input type = "radio" id = "firstOrder3" name = "firstSort" value = "b.bookName" onclick = "getToDay(days.value)">
+<label for = "firstOrder3">書籍名</label>
+</div>
+
+<div>第2優先　　
+<input type = "radio" id = "secondOrder1" name = "secondSort" value = "l.deadLineDate" onclick = "getToDay(days.value)">
+<label for = "secondOrder1">日数</label>
+<input type = "radio" id = "secondOrder2" name = "secondSort" value = "u.userName" checked onclick = "getToDay(days.value)">
+<label for = "secondOrder2">利用者名</label>
+<input type = "radio" id = "secondOrder3" name = "secondSort" value = "b.bookName" onclick = "getToDay(days.value)">
+<label for = "secondOrder3">書籍名</label>
+</div>
+</fieldset>
+<br>
+
+<fieldset class = "daysField">
+<div>絞り込み日数：
+<input type = "text" id = "days" maxlength = "3" class = "daysInsert" value = "1" onchange = "insertChk(this.value)">日
+<input type = "radio" id = "daysZone1" name = "daysZone" value = "<=" checked onclick = "getToDay(days.value)">
+<label for = "daysZone1">以上</label>
+<input type = "radio" id = "daysZone2" name = "daysZone" value = ">=" onclick = "getToDay(days.value)">
+<label for = "daysZone2">以下</label>
+</div>
+</fieldset>
+
+<div class = "center fontChg25">
+<br>
+<div id = "tableSet"></div>
+<br>
+
+<form action = "LibrarySystem_DelList" method = "post">
+<input type = "submit" value = "戻る" class = "buttonSizeS">
+</form>
+
+</body>
+</html>

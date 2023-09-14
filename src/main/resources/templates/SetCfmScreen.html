@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns：th="http：//www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>設定：設定変更確認</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+
+<script src = "SettingChgColor.js"></script>
+</head>
+
+<body>
+<p>設定：設定変更確認</p>
+<form action = "LibrarySystem_MainMenu_Msg" method = "post">
+<input type = "hidden" id = "chgKeyList" name = "chgKeyList" th:value = "${chgKeyList}">
+<input type = "hidden" id = "settingMap" name = "settingMap" th:value = "${settingMap}">
+<input type = "hidden" id = "updMap" name = "updMap" th:value = "${updMap}">
+
+<div class = "center fontChg30">
+
+<div class = "redFontChg">以下の通りに設定を変更します</div>
+
+<div>
+	貸出上限数： <input type = "text" id = "lendingLimit" th:value = "${lendLimvalue}" class = "character2size" readonly> 冊
+</div>
+
+<div>
+	返却期限：貸出から <input type = "text" id = "returnDeadline" th:value = "${deadlinevalue}" class = "character2size" readonly> 日後
+</div>
+
+<div>
+	期限カウント方法： <input type = "text" id = "deadlineCountMethod" th:value = "${dlCountvalue}" class = "character5size" readonly>
+</div>
+
+<div>
+	期限カウント時刻： <input type = "text" id = "deadlineCountTimeT" th:value = "${dlCountTvalue}" class = "character2size" readonly> 時
+	<input type = "text" id = "deadlineCountTimeM" th:value = "${dlCountMvalue}" class = "character2size" readonly> 分
+</div>
+
+<div>
+	貸出制限対象：累計延滞日数 <input type = "text" id = "penaltyDays" th:value = "${penaDaysvalue}" class = "character2size" readonly> 日
+</div>
+
+
+<div>
+	貸出制限期間： <input type = "text" id = "penaltyPeriod" th:value = "${penaPeriodvalue}" class = "character3size" readonly> 日
+</div>
+
+<div>
+	累計リセット期間： <input type = "text" id = "totalResetPeriod" th:value = "${resPeriodvalue}" class = "character3size" readonly> 日
+</div>
+
+<div>
+	催促メール送信：期限日から <input type = "text" id = "urgeBookReturnMail" th:value = "${urgeMailvalue}" class = "character2size" readonly> 日後
+</div>
+
+<div>
+	メール送信時刻： <input type = "text" id = "mailSendingTime" th:value = "${mailSendTvalue}" class = "character2size" readonly> 時
+</div>
+
+
+<input type = "submit" value = "設定完了" class = "buttonSizeM">
+</form>
+<br>
+
+<form action = "LibrarySystem_Setting" method = "post">
+<input type = "submit" value = "キャンセル" class = "buttonSizeM">
+</form>
+</div>
+</body>
+
+</html>

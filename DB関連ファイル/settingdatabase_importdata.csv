@@ -1,0 +1,11 @@
+# settingItem, settingValue
+'deadlineCountMethod', '1'
+'deadlineCountTimeM', '15'
+'deadlineCountTimeT', '01'
+'lendingLimit', '3'
+'mailSendingTime', '08'
+'penaltyDays', '15'
+'penaltyPeriod', '16'
+'returnDeadline', '9'
+'totalResetPeriod', '364'
+'urgeBookReturnMail', '6'

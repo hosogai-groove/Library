@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset = "UTF-8">
+<title>図書館システム</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+
+</head>
+
+<body>
+<p>図書館システム</p>
+
+<br>
+<div class = "center fontChg30">
+<div th:text = "'図書カード番号：'+${cardNumber}+''"></div>
+<div th:text = "''+${userName}+' 様で貸出・返却を行います'"></div>
+<form action = "LibrarySystem_LendReturn" method = "post" style = "display: inline">
+	<input type = "submit" value = "はい" class = "buttonSizeS">
+	<input type = "hidden" name = "cardNumber" th:value = "${cardNumber}">
+	<input type = "hidden" name = "userName" th:value = "${userName}">
+</form>
+	　　	
+<form action = "LibrarySystem_CardNumInsert" method = "post" style = "display: inline">
+	<input type = "submit" value = "いいえ" class = "buttonSizeS">
+</form>
+</div>
+</body>
+</html>

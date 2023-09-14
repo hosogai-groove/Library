@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html xmlns：th="http：//www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>設定：設定変更</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+
+<script src = "TextBoxInsert.js"></script>
+<script src = "InsertChkSet.js"></script>
+
+<script src = "ErrorMsgSet.js"></script>
+
+<script src = "OptionSelected.js"></script>
+<script src = "ValueChgflag.js"></script>
+</head>
+
+
+<body>
+<p>設定：設定変更</p>
+
+<div class = "center fontChg30">
+<form action = "LibrarySystem_Set_Cfm" method = "post">
+<div>
+	貸出上限数： <input type = "text" th:value = "${lendingLimit}" id = "lendLimtext" name = "lendLimvalue" class = "character2size" maxlength = "2" onchange= "insertChk('lendLim')"> 冊
+</div>
+<input type = "hidden" th:value = "${lendingLimit}" id ="lendLimbfSet">
+<input type = "hidden" id ="lendLimerror" value = "0">
+
+<div>
+	返却期限：貸出から <input type = "text" th:value = "${returnDeadline}" id = "deadlinetext" name = "deadlinevalue" class = "character2size" maxlength = "2" onchange= "insertChk('deadline')"> 日後
+<input type = "hidden" th:value = "${returnDeadline}" id ="deadlinebfSet">
+<input type = "hidden" id ="deadlineerror" value = "0">
+</div>
+
+<div>
+	期限カウント方法： <input type = "text" id = "dlCounttext" name = "dlCountvalue" th:value = "${deadlineCountMethod}" class = "character5size" readonly>
+	<select class = "pulldownsize" id = "dlCountpulldown" onchange = "insertText('dlCount')">
+		<option>土日を含む</option>
+		<option>土日を除く</option>
+	</select>
+	<input type = "hidden" th:value = "${deadlineCountMethod}" id ="dlCountbfSet">
+</div>
+
+<div>
+	期限カウント時刻：
+	<input type = "text" id = "dlCountTtext" name = "dlCountTvalue" th:value = "${deadlineCountTimeT}" class = "character2size" readonly>
+	<select class = "pulldownsize" id = "dlCountTpulldown" onchange = "insertText('dlCountT')">
+		<option>00</option>
+		<option>01</option>
+		<option>02</option>
+		<option>03</option>
+		<option>04</option>
+		<option>05</option>
+		<option>06</option>
+		<option>07</option>
+		<option>08</option>
+		<option>09</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+		<option>14</option>
+		<option>15</option>
+		<option>16</option>
+		<option>17</option>
+		<option>18</option>
+		<option>19</option>
+		<option>20</option>
+		<option>21</option>
+		<option>22</option>
+		<option>23</option>
+	</select> 時
+	<input type = "hidden" th:value = "${deadlineCountTimeT}" id ="dlCountTbfSet">
+	
+	<input type = "text" id = "dlCountMtext" name = "dlCountMvalue" th:value = "${deadlineCountTimeM}" class = "character2size" readonly>
+	<select class = "pulldownsize" id = "dlCountMpulldown" onchange = "insertText('dlCountM')">
+		<option>00</option>
+		<option>15</option>
+		<option>30</option>
+		<option>45</option>
+	</select> 分
+	<input type = "hidden" th:value = "${deadlineCountTimeM}" id ="dlCountMbfSet">
+	
+</div>
+
+<div>
+	貸出制限対象：累計延滞日数 <input type = "text"  th:value = "${penaltyDays}" id ="penaDaystext" name = "penaDaysvalue" class = "character2size" maxlength = "2" onchange= "insertChk('penaDays')"> 日
+	<input type = "hidden" th:value = "${penaltyDays}" id ="penaDaysbfSet">
+	<input type = "hidden" id ="penaDayserror" value = "0">
+</div>
+
+<div>
+	貸出制限期間： <input type = "text"  th:value = "${penaltyPeriod}" id ="penaPeriodtext" name = "penaPeriodvalue" class = "character3size" maxlength = "3" onchange= "insertChk('penaPeriod')"> 日
+	<input type = "hidden" th:value = "${penaltyPeriod}" id ="penaPeriodbfSet">
+	<input type = "hidden" id ="penaPerioderror" value = "0">
+</div>
+
+<div>
+	累計リセット期間： <input type = "text"  th:value = "${totalResetPeriod}" id ="resPeriodtext" name = "resPeriodvalue" class = "character3size" maxlength = "3" onchange= "insertChk('resPeriod')"> 日
+	<input type = "hidden" th:value = "${totalResetPeriod}" id ="resPeriodbfSet">
+	<input type = "hidden" id ="resPerioderror" value = "0">
+</div>
+
+<div>
+	催促メール送信：期限日から <input type = "text" id = "urgeMailtext" name = "urgeMailvalue" th:value = "${urgeBookReturnMail}" class = "character2size" readonly>
+	<select class = "pulldownsize" id = "urgeMailpulldown" onchange = "insertText('urgeMail')">
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+		<option>8</option>
+		<option>9</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+		<option>14</option>
+		<option>15</option>
+		<option>16</option>
+		<option>17</option>
+		<option>18</option>
+		<option>19</option>
+		<option>20</option>
+		<option>21</option>
+		<option>22</option>
+		<option>23</option>
+		<option>24</option>
+		<option>25</option>
+		<option>26</option>
+		<option>27</option>
+		<option>28</option>
+		<option>29</option>
+		<option>30</option>
+	</select> 日後
+	<input type = "hidden" th:value = "${urgeBookReturnMail}" id ="urgeMailbfSet">
+</div>
+
+<div>
+	メール送信時刻： <input type = "text"  th:value = "${mailSendingTime}" id = "mailSendTtext" name = "mailSendTvalue" class = "character2size" readonly>
+	<select class = "pulldownsize" id = "mailSendTpulldown" onchange = "insertText('mailSendT')">
+		<option>00</option>
+		<option>01</option>
+		<option>02</option>
+		<option>03</option>
+		<option>04</option>
+		<option>05</option>
+		<option>06</option>
+		<option>07</option>
+		<option>08</option>
+		<option>09</option>
+		<option>10</option>
+		<option>11</option>
+		<option>12</option>
+		<option>13</option>
+		<option>14</option>
+		<option>15</option>
+		<option>16</option>
+		<option>17</option>
+		<option>18</option>
+		<option>19</option>
+		<option>20</option>
+		<option>21</option>
+		<option>22</option>
+		<option>23</option>
+	</select> 時
+	
+	<input type = "hidden" th:value = "${mailSendingTime}" id = "mailSendTbfSet">
+</div>
+	<input type = "hidden" th:value = "${settingMap}" name = "bfSettingList">
+
+<input type = "submit" value = "設定変更" id = "settingChg" class = "buttonSizeM">
+</form>
+
+<form action = "LibrarySystem_MainMenu" method = "post">
+<input type = "submit" value = "戻る" class = "buttonSizeS">
+</form>
+</div>
+
+</body>
+
+</html>

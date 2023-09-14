@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>返却</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+<script src = "RetCfm/CreaTableRetCfm.js"></script>
+</head>
+
+<body>
+<p>
+<div>返却</div>
+</p>
+
+<div class = "fontChg30">
+<div th:text = "'図書カード番号：'+${cardNumber}+''"></div>
+<div class = "center">
+	<br>
+	<div>下記の書籍を返却します</div>
+	<div id = "tableSet"></div>
+	
+	<br>
+	<form action = "LibrarySystem_RetComp" method = "post">
+	<input type = "hidden" id = "returnData" name = "returnData" th:value = "${returnData}">
+	<input type = "hidden" id = "bookData" name = "bookData">
+	<input type = "hidden" name = "cardNumber" th:value = "${cardNumber}">
+	<input type = "hidden" name = "userName" th:value = "${userName}">
+	<input type = "submit" id = "retButton" value = "返却確定" class = "buttonSizeM">
+	<br>
+	</form>
+	<form action = "LibrarySystem_ReturnSystem" method = "post">
+	<input type = "hidden" name = "cardNumber" th:value = "${cardNumber}">
+	<input type = "hidden" name = "userName" th:value = "${userName}">
+	<input type = "submit" value = "戻る" class = "buttonSizeS">
+	</form>
+</div>
+</div>
+</body>
+</html>

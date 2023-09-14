@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>貸出</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+
+<script src = "CreateTableLe.js"></script>
+</head>
+
+<body>
+<p>
+<div>貸出</div>
+<div>貸出確認</div>
+</p>
+<div class = "fontChg30 center">
+<div class = "redFontChg">下記の書籍を貸出します</div>
+<div th:text = "'図書カード番号：'+${cardNumber}+''"></div>
+<div th:text = "'利用者：'+${userName}+'　様'"></div>
+<form action = "LibrarySystem_LendCfm" method = "post">
+<input type = "hidden" name = "cardNumber" th:value = "${cardNumber}">
+<input type = "hidden" name = "userName" th:value = "${userName}">
+<input type = "hidden" id = "lendList" th:value = "${lendList}">
+<input type = "hidden" id = "lendRecodeList" name = "lendRecodeList" value = 0>
+<input type = "submit" value = "貸出確定" class = "buttonSizeM">
+<br>
+</form>
+<form action = "LibrarySystem_LendSystem" method = "post">
+<input type = "submit" value = "戻る" class = "buttonSizeS">
+<input type = "hidden" name = "cardNumber" th:value = "${cardNumber}">
+<input type = "hidden" name = "userName" th:value = "${userName}">
+<input type = "hidden" name = "remaining" th:value = "${remaining}">
+</form>
+<br>
+</div>
+</body>
+</html>

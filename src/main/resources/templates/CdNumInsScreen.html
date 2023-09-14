@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset = "UTF-8">
+<title>図書館システム</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+
+<link rel = "stylesheet"
+href = "BoxSizeChg.css"
+type = "text/css"
+media = "all"
+>
+
+<script src = "InsertChkLeRet.js"></script>
+<script src = "ErrorMsgLeRet.js"></script>
+<script src = "https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src = "CdNumIns/UserMstConnect.js"></script>
+</head>
+
+
+<body>
+<p>図書館システム</p>
+<div class = "center fontChg30">
+<p id = "cardmsg">図書館カード番号を入力してください</p>
+
+<div>図書カード番号：<input type = "text" id = "cardNumtext" name = "cardNumtext" maxlength = "5" class = "character5size" onchange ="insertChkA('cardNum')"></div>
+<br>
+<form action = "LibrarySystem_UserCfm" method = "post">
+<input type = "submit" id = "nextbutton" value = "次へ" class = "buttonSizeM" disabled>
+<input type = "hidden" id = "cardData" name = "cardData">
+</form>
+<br>
+<form action = "LibrarySystem_MainMenu" method = "post">
+<input type = "submit" value = "戻る" class = "buttonSizeS">
+</form>
+</div>
+</body>
+
+</html>

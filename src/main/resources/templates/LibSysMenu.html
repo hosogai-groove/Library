@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>図書館システムメニュー画面</title>
+
+<link rel = "stylesheet"
+href = "ButtonStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<link rel = "stylesheet"
+href = "FontStyle.css"
+type = "text/css"
+media = "all"
+>
+
+<script src = AlertMsg.js></script>
+</head>
+
+
+<p>
+<p>図書館システムメニュー</p>
+<input type = "hidden" id = "setMsg" th:value = "${setMsg}">
+<div class = "center">
+<form action = "LibrarySystem_CardNumInsert" method = "post">
+<input type = "submit" value = "貸出・返却" class = "buttonSizeL">
+</form>
+<br>
+<br>
+<form action = "LibrarySystem_DelList" method = "post">
+<input type = "submit" value = "延滞一覧" class = "buttonSizeL">
+</form>
+<br>
+<br>
+<form action = "LibrarySystem_Setting" method = "post">
+<input type = "submit" value = "設定" class = "buttonSizeM">
+</form>
+
+</div>
+
+</body>
+
+</html>

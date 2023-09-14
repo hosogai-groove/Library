@@ -1,0 +1,4 @@
+# deadLineDate, cardNumber, bookNumber, bookBranchNumber, mailFlag
+'2023-08-31', '00002', 'A00001', '1', '1'
+'2023-09-01', '00001', 'A00001', '0', '0'
+'2023-09-02', '00001', 'A00002', '1', '2'
